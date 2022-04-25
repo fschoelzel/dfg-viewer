@@ -208,6 +208,62 @@ plugin.tx_dlf_audioplayer {
 }
 
 # --------------------------------------------------------------------------------------------------------------------
+# media player
+# --------------------------------------------------------------------------------------------------------------------
+
+plugin.tx_dlf_mediaplayer < tt_content.list.20.dlf_mediaplayer
+plugin.tx_dlf_mediaplayer {
+    settings {
+	    elementId = tx-dlf-media
+
+        playerTranslations {
+            baseFile = EXT:dlf/Resources/Private/Language/locallang_media.xlf
+        }
+
+        shareButtons {
+            0 {
+                type = material
+                icon = email
+                titleTranslationKey = share.email.tooltip
+                hrefTemplate = mailto:?body={url}%0A%0A
+            }
+
+            1 {
+                type = material
+                icon = qr_code
+                titleTranslationKey = share.qr_code.tooltip
+                hrefTemplate = dlf:qr_code
+            }
+
+            2 {
+                type = image
+                src = EXT:slub_digitalcollections/Resources/Public/Images/Twitter_Logo_blue.svg
+                titleTranslationKey = share.tweet.tooltip
+                hrefTemplate = https://twitter.com/intent/tweet?url={url}
+            }
+        }
+
+        screenshotCaptions {
+            0 {
+                h = left
+                v = bottom
+                text = {host}
+            }
+
+            1 {
+                h = right
+                v = bottom
+                text = {title}
+            }
+        }
+
+        constants {
+            screenshotFilenameTemplate = screenshot_{title}_h{hh}m{mm}s{ss}f{ff}
+        }
+    }
+}
+
+# --------------------------------------------------------------------------------------------------------------------
 # 3d object
 # --------------------------------------------------------------------------------------------------------------------
 [getDocumentType({$plugin.tx_dlf.persistence.storagePid}) == "object"]
