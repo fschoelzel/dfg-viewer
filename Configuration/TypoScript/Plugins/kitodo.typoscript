@@ -318,6 +318,51 @@ plugin.tx_dlf_mediaplayer {
         constants {
             screenshotFilenameTemplate = screenshot_{title}_h{hh}m{mm}s{ss}f{ff}
         }
+
+        equalizer {
+            enabled = 1
+
+            default = 3-band
+
+            presets {
+                3-band {
+                    group = graphic
+                    mode = band-iso
+                    label = 3-Band
+                    octaveStep = 3.32
+                }
+
+                10-band {
+                    group = graphic
+                    mode = band-iso
+                    label = 10-Band
+                    octaveStep = 1
+                }
+
+                riaa {
+                    group = riaa
+                    mode = riaa
+                    label = RIAA
+                    params {
+                        trebleCut = 75
+                        baseBoost = 318
+                        baseBoostRolloff = 3180
+                    }
+                }
+
+                riaa-iec {
+                    group = riaa
+                    mode = riaa
+                    label = Enhanced RIAA / IEC
+                    params {
+                        trebleCut = 75
+                        baseBoost = 318
+                        baseBoostRolloff = 3180
+                        deepBaseRolloff = 7950
+                    }
+                }
+            }
+        }
     }
 }
 
