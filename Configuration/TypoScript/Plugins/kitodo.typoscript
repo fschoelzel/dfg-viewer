@@ -237,6 +237,13 @@ plugin.tx_dlf_mediaplayer {
 
             2 {
                 type = image
+                src = EXT:slub_digitalcollections/Resources/Public/Images/mastodon-logo-purple.svg
+                titleTranslationKey = share.mastodon.tooltip
+                hrefTemplate = dlf:mastodon_share
+            }
+
+            3 {
+                type = image
                 src = EXT:slub_digitalcollections/Resources/Public/Images/Twitter_Logo_blue.svg
                 titleTranslationKey = share.tweet.tooltip
                 hrefTemplate = https://twitter.com/intent/tweet?url={url}
