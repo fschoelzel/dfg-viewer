@@ -17,6 +17,9 @@
 		<trans-unit id="double.singlePageView">
 			<source>Show single page</source>
 		</trans-unit>
+        <trans-unit id="double.mediaplayerView">
+            <source>Show Mediaplayer</source>
+        </trans-unit>
 		<trans-unit id="download.leftPage">
 			<source>Download left page</source>
 		</trans-unit>
