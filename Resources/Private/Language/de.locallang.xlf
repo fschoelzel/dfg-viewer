@@ -25,6 +25,10 @@
 				<source><![CDATA[Show single page]]></source>
 				<target><![CDATA[Einzelseitenansicht]]></target>
 			</trans-unit>
+			<trans-unit id="double.mediaplayerView" approved="yes">
+				<source><![CDATA[Show Mediaplayer]]></source>
+				<target><![CDATA[Mediaplayer Ansicht]]></target>
+			</trans-unit>
 			<trans-unit id="download.leftPage" approved="yes">
 				<source><![CDATA[Download left page]]></source>
 				<target><![CDATA[Linke Seite herunterladen]]></target>
