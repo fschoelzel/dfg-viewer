@@ -114,6 +114,24 @@ $(document).ready(function() {
     $('.provider').append('<div class="mobile-controls" />');
     $('.view-functions .pages form, .view-functions .zoom a.fullscreen, .fulltext-search-toggle').clone().appendTo('.provider .mobile-controls');
 
+    // Custom Document Functions for Mediaplayer
+    if ($('.dlf-shaka[data-mode="audio"], .dlf-shaka[data-mode="video"]').length) {
+        // Copy Document Functions Buttons
+        $('.document-view .document-functions > ul').clone().addClass('tx-dlf-media-submenu').prependTo('.provider .mobile-controls');
+        // Add custom CSS to Mobile Controls
+        $('.document-view .provider .mobile-controls').addClass('tx-dlf-media-mobile-controls');
+        // Hide Bottom Document Functions Buttons
+        $('.document-view .document-functions > ul').addClass('tx-dlf-media-submenu-hidden');
+        // Change length of Mobile Meta String based on new width
+        $('.document-view .document-functions .provider .mobile-meta').addClass('tx-dlf-media-mobile-meta');
+        // add active toggle for submenus
+        $('.tx-dlf-media-submenu li.submenu > a').on(mobileEvent, function(event) {
+            $('li.submenu.open a').not(this).parent().removeClass('open');
+            $(this).parent().toggleClass('open');
+            return false;
+        });
+    }
+
     // Shorten mobile meta title
     shortenMobileMetaElement = $('.provider dl.mobile-meta dd.tx-dlf-title a');
     shortenMobileMetaTitle = shortenMobileMetaElement.text();
