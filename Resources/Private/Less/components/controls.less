@@ -9,6 +9,7 @@
 
 /* ==============[ basic settings for document control and view buttons ]================= */
 .document-functions,
+.document-functions .provider .tx-dlf-media-mobile-controls,
 .view-functions {
     > ul {
         position: absolute;
@@ -55,7 +56,8 @@
 }
 
 /* ==============[ document functions for downloads, doublepage eg. ]===================== */
-.document-functions {
+.document-functions,
+.document-functions .provider .tx-dlf-media-mobile-controls {
     > ul {
         bottom: 15px;
         left: 15px;
@@ -326,6 +328,48 @@
         }
         @media screen and (min-width: @desktopViewportWidth) {
             left: 124px;
+        }
+        &.tx-dlf-media-submenu-hidden {
+            @media screen and (max-width: @tabletLandscapeViewportWidth) {
+                display: none;
+            }
+        }
+    }
+
+    // Custom Document Functions Submenu for Mediaplayer
+    ul.tx-dlf-media-submenu {
+        position: relative;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        > li {
+            &.submenu {
+                &:before {
+                    top: auto;
+                    bottom: -10px;
+                    border-width: 0 10px 10px 10px;
+                    border-bottom-color: fade(@base-blue,90%);
+                }
+                > ul {
+                    top: auto;
+                    bottom: auto;
+                    margin-top: 10px;
+                    transform-origin: center top;
+                    .transform(scaleY(0) translateY(-100px));
+                }
+                &.open {
+                    &:before {
+                        opacity: 1;
+                    }
+                    ul {
+                        .transform(scaleY(1) translateY(0));
+                        opacity: 1;
+                    }
+                }
+            }
+            > a {
+                margin: 0 1px;
+            }
         }
     }
 }
