@@ -259,6 +259,8 @@ plugin.tx_dlf_mediaplayer {
 
         constants {
             screenshotFilenameTemplate = screenshot_{title}_h{hh}m{mm}s{ss}f{ff}
+            seekStep = 11
+            showPoster = 0
         }
 
         equalizer {
