@@ -45,6 +45,7 @@ class SruController extends AbstractController
 {
     /**
      * The main method of the controller
+     *
      * @return ResponseInterface
      */
     public function mainAction(): ResponseInterface
