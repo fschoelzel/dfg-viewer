@@ -28,8 +28,8 @@ if ! test -f "config/system/settings.php"; then
    --web-server-config="apache"
 
    # set base configuration
-    ./vendor/bin/typo3 configuration:set 'EXTENSIONS/dlf/fileGrpAudio' 'AUDIO'
-    ./vendor/bin/typo3 configuration:set 'EXTENSIONS/dlf/fileGrpVideo' 'VIDEO,DEFAULT'
+    ./vendor/bin/typo3 configuration:set 'EXTENSIONS/dlf/files/useGroupsAudio' 'AUDIO'
+    ./vendor/bin/typo3 configuration:set 'EXTENSIONS/dlf/files/useGroupsVideo' 'VIDEO,DEFAULT'
     ./vendor/bin/typo3 configuration:set --json 'FE/cacheHash/requireCacheHashPresenceParameters' '["tx_dlf[id]"]'
     ./vendor/bin/typo3 configuration:set 'FE/pageNotFoundOnCHashError' 0
 
