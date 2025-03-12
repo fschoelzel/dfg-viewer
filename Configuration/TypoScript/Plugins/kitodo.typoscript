@@ -146,6 +146,7 @@ plugin.tx_dlf_tableofcontents < tt_content.list.20.dlf_tableofcontents
 plugin.tx_dlf_tableofcontents {
     settings {
         targetPid = {$plugin.tx_dfgviewer.kitodoPageView}
+        // showFull = 0
         menuConf {
             expAll = 1
         }
@@ -207,6 +208,7 @@ lib.kitodo.navigation.viewfunction {
 plugin.tx_dlf_toolbox < tt_content.list.20.dlf_toolbox
 plugin.tx_dlf_toolbox {
     settings {
+        // fileGrpsImageDownload = MIN,DEFAULT,MAX
     }
 }
 
@@ -250,8 +252,7 @@ plugin.tx_dlf_imagemanipulationtool {
 plugin.tx_dlf_pdfdownloadtool < plugin.tx_dlf_toolbox
 plugin.tx_dlf_pdfdownloadtool {
     settings {
-        fileGrpsImageDownload = DEFAULT
-        tools = pdfdownloadtool,imagedownloadtool,fulltextdownloadtool
+        tools = pdfdownloadtool
     }
 }
 
@@ -311,7 +312,7 @@ plugin.tx_dlf_mediaplayer {
             1 {
                 h = right
                 v = bottom
-                text = {title}
+                text = {title} - {hh}:{mm}:{ss}.{ff}
             }
         }
 
@@ -319,6 +320,11 @@ plugin.tx_dlf_mediaplayer {
             screenshotFilenameTemplate = screenshot_{title}_h{hh}m{mm}s{ss}f{ff}
             seekStep = 11
             showPoster = 0
+            screenshotCommentTemplate (
+Screenshot taken by Florian Schölzel for testing.
+
+{url}
+)
         }
 
         equalizer {
