@@ -30,6 +30,7 @@ if ! test -f "config/system/settings.php"; then
    # set base configuration
     ./vendor/bin/typo3 configuration:set 'EXTENSIONS/dlf/files/useGroupsAudio' 'AUDIO'
     ./vendor/bin/typo3 configuration:set 'EXTENSIONS/dlf/files/useGroupsVideo' 'VIDEO,DEFAULT'
+    ./vendor/bin/typo3 configuration:set 'EXTENSIONS/dlf/files/useGroupsWaveform' 'WAVEFORM'
     ./vendor/bin/typo3 configuration:set --json 'FE/cacheHash/requireCacheHashPresenceParameters' '["tx_dlf[id]"]'
     ./vendor/bin/typo3 configuration:set 'FE/pageNotFoundOnCHashError' 0
 
