@@ -275,10 +275,6 @@ plugin.tx_dlf_mediaplayer {
     settings {
 	    elementId = tx-dlf-media
 
-        playerTranslations {
-            baseFile = EXT:dlf/Resources/Private/Language/locallang_media.xlf
-        }
-
         shareButtons {
             0 {
                 type = material
